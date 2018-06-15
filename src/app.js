@@ -1,5 +1,5 @@
 var app = angular
-			.module("myapp", ['ngMaterial'])
+			.module("myapp", [])
 			.controller("myCtrl", function($scope, $http){
 				$scope.currencies = {};
 
