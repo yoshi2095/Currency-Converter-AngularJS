@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app = "myapp">
+<head>
+	<title>Currency Converter</title>
+	<base href="/Currency-Converter-AngularJS/">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+</head>
+	<body ng-controller = "myCtrl" ng-init = "getCurrencies()">
+
+		<nav class="navbar navbar-expand-lg bg-dark justify-content-center">
+			<a href="#" class="navbar-brand">Simple Currency Converter in AngularJS</a>
+		</nav>
+
+		<br><br>	
+		<div class="container justify-content-center">
+			<form>
+				<div class="form group">
+					<label>From currency:</label>
+					<select ng-model="currencyFrom" ng-options="key as key for (key, value) in currencies">
+					</select>
+				</div>
+				<div class="form-group">
+					<label>To currency:</label>
+					<select ng-model="currencyTo" ng-options="key as key for (key, value) in currencies">
+						</select>
+				</div>
+				<div class="form-group">
+					<label>Amount:</label>
+					<input type="text" ng-model = "amount" class="form-control">
+				</div>
+				<button ng-click="convert()" class="btn form-control btn-primary">
+					Convert
+				</button>				
+			</form>
+		</div>
+		<br><br>
+		<div class="container justify-content-center">
+			<p>Converted Currency: {{convertedCurrency}}</p>
+			<br>
+			<p>TimeStamp: {{timestamp}}</p>
+		</div>
+
+	<!-- scripts -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+		<script src="src/app.js"></script>
+	</body>
+</html>
